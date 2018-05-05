@@ -1,9 +1,6 @@
 'use strict'
-const util = require('util')
+const callbackify = require('./callbackify')
 const _ = require('lodash')
-
-// 使用 Bluebird 来替代默认的全局 Promise (更快速的 Promise)
-global.Promise = require('bluebird')
 
 // 重写所有 Promise 方法为 Callback 方式
 const transform = origin => {
@@ -18,7 +15,7 @@ const transform = origin => {
 
   // 使用迭代器， 转换方法
   for (let method of methods) {
-    target[method] = util.callbackify(origin[method])
+    target[method] = callbackify(origin[method])
   }
   return target
 }

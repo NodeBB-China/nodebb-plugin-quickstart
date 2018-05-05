@@ -12,11 +12,12 @@
 // const path = module.parent.parent.require('path')
 
 // 载入依赖模块
-const _ = require('lodash')
-const util = require('util')
+// const _ = require('lodash')
+// const callbackify = require('../callbackify')
 
 class Controllers {
-  async renderAdminPage (req, res) {
+  // 已经确认由于 NodeBB 的 Express 的原因， 会导致中间件已经书写头， 造成错误， 故暂时移除此处的重写
+  renderAdminPage (req, res) {
     /*
       请确保你的路由地址能和模板路径能够对应。
       例如， 如果你的站点地址为:
@@ -37,7 +38,7 @@ class Controllers {
 
     */
   }
-
+  /*
   load () {
     // 转换所有内部方法为回调方式
     const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(this))
@@ -45,10 +46,11 @@ class Controllers {
     // _.pull(methods, 'prototype', 'length', 'name', 'load')
     const target = {}
     for (let method of methods) {
-      target[method] = util.callbackify(this[method])
+      target[method] = callbackify(this[method])
     }
     return target
   }
+  */
 }
 
 module.exports = Controllers
