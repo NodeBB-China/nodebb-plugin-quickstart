@@ -1,0 +1,43 @@
+{
+  "name": "nodebb-plugin-quickstart",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "description": "A starter kit for quickly creating NodeBB plugins",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodebb-cn/nodebb-plugin-quickstart"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "quickstart",
+    "shell"
+  ],
+  "author": {
+    "name": "a632079",
+    "email": "a632079@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodebb-cn/nodebb-plugin-quickstart/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10"
+  }
+}
