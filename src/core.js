@@ -9,8 +9,6 @@ class Core {
     // const hostControllers = params.controllers
     router.get('/admin/plugins/quickstart', hostMiddleware.admin.buildHeader, controllers.renderAdminPage)
     router.get('/api/admin/plugins/quickstart', controllers.renderAdminPage)
-
-    return 'undefined'
   }
 
   async addAdminNavigation (header) {
