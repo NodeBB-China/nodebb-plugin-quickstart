@@ -14,7 +14,29 @@
 ```
 pnpm i
 ```
-
+# 使用类静态方法
+例如, 你在 `core.js` 中这样编写:
+```javascript
+class Core {
+    static func () {
+        return 'Hello, World!'
+    }
+}
 ```
-(c) 2018 MoeCraft All rights reserved.
+
+我们需要在 `library.js` 中做出如下更改:
+```javascript
+// 获取对象的所有键
+//  const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(origin))
+const methods = Object.getOwnPropertyNames(origin)
+
+// 删除不必要的键
+// _.pull(methods, 'constructor')
+// 如果类使用静态方法， 请注释掉上方， 并使用下方的代码代替
+_.pull(methods, 'prototype', 'length', 'name')
+
+// 载入插件库核心
+// const Origin = require('./src/core')
+// const origin = new Origin()
+const origin = require('./src/core')
 ```
