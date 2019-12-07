@@ -1,30 +1,31 @@
 'use strict'
-const callbackify = require('./callbackify')
-const _ = require('lodash')
 
-// 重写所有 Promise 方法为 Callback 方式
-const transform = origin => {
-  const target = {}
-  // 获取对象的所有键
-  const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(origin))
+const controllers = require('./lib/controllers')
 
-  // 删除不必要的键
-  _.pull(methods, 'constructor')
-  // 如果类使用静态方法， 请注释掉上方， 并使用下方的代码代替
-  // _.pull(methods, 'prototype', 'length', 'name')
+const plugin = {}
 
-  // 使用迭代器， 转换方法
-  for (let method of methods) {
-    target[method] = callbackify(origin[method])
-  }
-  return target
+plugin.init = function (params, callback) {
+  const router = params.router
+  const hostMiddleware = params.middleware
+  // const hostControllers = params.controllers;
+
+  // We create two routes for every view. One API call, and the actual route itself.
+  // Just add the buildHeader middleware to your route and NodeBB will take care of everything for you.
+
+  router.get('/admin/plugins/quickstart', hostMiddleware.admin.buildHeader, controllers.renderAdminPage)
+  router.get('/api/admin/plugins/quickstart', controllers.renderAdminPage)
+
+  callback()
 }
 
-// 载入插件库核心
-const Origin = require('./src/core')
-const origin = new Origin()
+plugin.addAdminNavigation = function (header, callback) {
+  header.plugins.push({
+    route: '/plugins/quickstart',
+    icon: 'fa-tint',
+    name: 'Quickstart'
+  })
 
-// 转换
-const plugin = transform(origin)
+  callback(null, header)
+}
 
 module.exports = plugin
