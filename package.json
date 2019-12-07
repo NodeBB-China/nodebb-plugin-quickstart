@@ -1,11 +1,11 @@
 {
   "name": "nodebb-plugin-quickstart",
   "version": "0.2.4",
-  "description": "A starter kit for quickly creating NodeBB plugins",
+  "description": "NodeBB插件的快速生成工具",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart"
+    "url": "https://github.com/nodebb-china/nodebb-plugin-quickstart"
   },
   "keywords": [
     "nodebb",
@@ -26,27 +26,30 @@
     ]
   },
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "a632079",
+    "email": "a632079@gmail.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/nodebb-china/nodebb-plugin-quickstart/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
-    "compatibility": "^1.0.0"
+    "compatibility": "^1.13.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-angular": "^7.1.2",
-    "eslint": "^4.19.1",
+    "eslint": "^6.2.2 ",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
     "husky": "^2.4.0",
     "lint-staged": "^8.2.0"
+  },
+  "dependencies": {
   }
 }

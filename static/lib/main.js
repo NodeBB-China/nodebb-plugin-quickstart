@@ -4,17 +4,17 @@
 
 $(document).ready(function () {
 	/*
-		This file shows how client-side javascript can be included via a plugin.
-		If you check `plugin.json`, you'll see that this file is listed under "scripts".
-		That array tells NodeBB which files to bundle into the minified javascript
-		that is served to the end user.
+		这个文件告诉我们：如何引入一个客户端 js 脚本
+		在 `plugin.json` 中，你可以发现本文件列在 "scripts" 字段中。
+		那个数组的意义是告知 NodeBB 构建时，需要引入并优化的客户端 js 脚本。
 
-		Some events you can elect to listen for:
+		这些方法你很可能会用到：
 
-		$(document).ready();			Fired when the DOM is ready
-		$(window).on('action:ajaxify.end', function(data) { ... });			"data" contains "url"
+		$(document).ready();	  当 DOM 加载完毕时会触发。
+		$(window).on('action:ajaxify.end', function(data) { ... });		注："data" 包含 "url" 
+		Ajax 请求完成后触发，更明确的表述： Ajax操作完成， 并切换路由后触发。
 	*/
 
-	console.log('nodebb-plugin-quickstart: loaded');
-	// Note how this is shown in the console on the first load of every page
+	console.log('nodebb-plugin-quickstart: 已载入');
+	// 注意：这个会在着陆页触发。
 });

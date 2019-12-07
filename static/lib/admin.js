@@ -1,6 +1,6 @@
 'use strict';
 
-/* globals $, app, socket, define */
+/* 全局定义了 $, app, socket, define */
 
 define('admin/plugins/quickstart', ['settings'], function (Settings) {
 	var ACP = {};
@@ -14,7 +14,7 @@ define('admin/plugins/quickstart', ['settings'], function (Settings) {
 					type: 'success',
 					alert_id: 'quickstart-saved',
 					title: 'Settings Saved',
-					message: 'Please reload your NodeBB to apply these settings',
+					message: '点击以重启你的 NodeBB 使变动生效。',
 					clickfn: function () {
 						socket.emit('admin.reload');
 					},
