@@ -1,15 +1,15 @@
 'use strict'
 // 系统函数库
-// const user = module.parent.parent.require('./user')
-// const db = module.parent.parent.require('../src/database')
-// const meta = module.parent.parent.require('./meta')
-// const utils = module.parent.parent.require('../public/src/utils')
+// const user = require.main.require('./user')
+// const db = require.main.require('../src/database')
+// const meta = require.main.require('./meta')
+// const utils = require.main.require('../public/src/utils')
 
 // 常用模块
-// const async = module.parent.parent.require('async')
-// const nconf = module.parent.parent.require('nconf')
-// const winston = module.parent.parent.require('winston')
-// const path = module.parent.parent.require('path')
+// const async = require.main.require('async')
+// const nconf = require.main.require('nconf')
+// const winston = require.main.require('winston')
+// const path = require.main.require('path')
 
 // 载入依赖模块
 // const _ = require('lodash')
