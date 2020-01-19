@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-quickstart",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "NodeBB插件的快速生成工具",
   "main": "library.js",
   "repository": {
